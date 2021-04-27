@@ -40,7 +40,8 @@ class Search extends Component {
     const { userInfo } = this.props;
     return (
       <div>
-        <form role="search" className="search-wrapper">
+        <form role="search" className="search-wrapper" autoComplete="off">
+          <input autoComplete="false" name="hidden" type="text" style={{display: "none"}}/>
           <input
             type="search"
             name="search"
@@ -48,7 +49,6 @@ class Search extends Component {
             className="search-input"
             onChange={this.onChange}
             value={this.state.username}
-            // onKeyPress={this.getUser}
           />
           <button className="search-button" onClick={this.getUser}>
             <img src={search} alt="search" className="search-icon"/>
