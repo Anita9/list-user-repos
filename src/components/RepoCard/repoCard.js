@@ -11,7 +11,7 @@ class RepoCard extends Component {
 
   render() {
     return (
-      <button className="repo-wrapper">
+      <button className="repo-wrapper" onClick={() => window.open(this.props.url, '_blank').focus()}>
         <h3 className="repo-name">{this.props.name}</h3>
         <div className="repo-description">
           <TextTruncate

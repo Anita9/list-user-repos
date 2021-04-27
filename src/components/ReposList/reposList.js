@@ -16,7 +16,7 @@ class ReposList extends Component {
   render() {
     return (
       <div>
-        <Link to="/">
+        <Link to="/list-user-repos">
           <button className="back-button">
             <img src={back} alt="Back button"/>
           </button>
@@ -32,6 +32,7 @@ class ReposList extends Component {
                 watchers={repo.watchers_count}
                 forks={repo.forks_count}
                 license={repo.license}
+                url={repo.html_url}
               />
             </div> 
           )}

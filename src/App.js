@@ -16,7 +16,7 @@ class App extends Component {
       <div className="App">
         <Router>
           <Switch>
-            <Route path="/" component={Search} exact/>
+            <Route path="/list-user-repos" component={Search} exact/>
             <Route path="/repos" component={ReposList} exact/>
           </Switch>
         </Router>
