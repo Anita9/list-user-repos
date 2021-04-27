@@ -1,0 +1,48 @@
+.repo-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  width: 220px;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 10px;
+  background-color: #ffffff;
+}
+
+.repo-name {
+  margin-left: 5px;
+}
+
+.repo-description {
+  width: 120px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: 5px;
+}
+
+.repo-created-date {
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.repo-info-wrapper {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  margin-top: 5px;
+}
+
+.stargazers {
+  grid-column-start: 1;
+}
+
+.watchers {
+  grid-column-start: 2;
+}
+
+.forks {
+  grid-column-start: 1;
+}
+.repo-licence {
+  grid-column-start: 2;
+}

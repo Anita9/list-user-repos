@@ -1,0 +1,51 @@
+.wrapper {
+  all: unset;
+  height: 85px;
+  width: 295px;
+  border: 2px solid #7e97a6;
+  border-radius: 5px;
+  margin: 20px 0; 
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-template-rows: 100%;
+  background-color: #ffffff;
+}
+
+.wrapper:hover {
+  cursor: pointer;
+  background-color: #c2c2bf81;
+}
+
+.wrapper:focus {
+  outline: none;
+}
+
+.user-avatar{
+  width: 65px;
+  height: 65px;
+  position: relative;
+  float: left;
+  margin: 10px 0 0 10px;
+  grid-column-start: 1;
+}
+
+.user-info {
+  grid-column-start: 2;
+  margin-top: 10px;
+  color: #373640;
+}
+
+.user-name{
+  text-align: left;
+  margin: 0 5px;
+}
+
+.user-description{
+  width: 120px;
+  height: 40px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 10px 5px;
+  font-size: 12px;
+}
