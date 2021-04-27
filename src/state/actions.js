@@ -14,3 +14,16 @@ export const getUserInfo = (username) => async (dispatch) => {
     console.error(error);
   })
 }
+
+export const getuserRepos = (username) => async (dispatch) => {
+  await axios.get(`https://api.github.com/users/${username}/repos`)
+  .then(response => {
+    dispatch({
+      type: constants.GET_USER_REPOS,
+      payload: response.data
+    })
+  })
+  .catch(error => {
+    console.error(error);
+  })
+}

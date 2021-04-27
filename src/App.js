@@ -7,7 +7,7 @@ import {
 import './App.css';
 
 import Search from './components/Search/search';
-import Repos from './components/ReposList/reposList';
+import ReposList from './components/ReposList/reposList';
 
 class App extends Component {
 
@@ -16,8 +16,8 @@ class App extends Component {
       <div className="App">
         <Router>
           <Switch>
-            <Route path="/" component={Search}/>
-            <Route path="/repos" component={Repos}/>
+            <Route path="/" component={Search} exact/>
+            <Route path="/repos" component={ReposList} exact/>
           </Switch>
         </Router>
       </div>

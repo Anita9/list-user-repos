@@ -3,10 +3,8 @@ import { constants } from './constants';
 
 export default (state=[], action) => {
   switch (action.type) {
-    case constants.GET_USER_INFO:
-      state.userInfo = action.payload;
-      state.userApiStatus = action.status;
-      return state;
+    case constants.GET_USER_REPOS:
+      return action.payload
     default:
       return state;
   }

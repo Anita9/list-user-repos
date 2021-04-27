@@ -1,12 +1,12 @@
 import { Component } from "react";
 import './searchStyles.css';
 import search from '../../search.svg'
-
 import UserCard from '../UserCard/userCard';
 
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { getUserInfo } from '../../state/actions';
+import { getUserInfo, getuserRepos } from '../../state/actions';
 
 class Search extends Component {
 
@@ -28,31 +28,56 @@ class Search extends Component {
   getUser = (e) => {
     e.preventDefault();
     this.props.getUserInfo(this.state.username);
+    this.forceUpdate();
   }
 
   render() {
 
+    console.log(this.props);
     const { userInfo } = this.props;
     return (
       <div>
         <form role="search" className="search-wrapper">
-          <input type="search" placeholder="Search Users" className="search-input" onChange={this.onChange} value={this.state.username} name="search"/>
+          <input
+            type="search"
+            name="search"
+            placeholder="Search Users"
+            className="search-input"
+            onChange={this.onChange}
+            value={this.state.username}
+            // onKeyPress={this.getUser}
+          />
           <button className="search-button" onClick={this.getUser}>
             <img src={search} alt="search" className="search-icon"/>
           </button>
         </form>
-        {userInfo && <UserCard avatar={userInfo.avatar_url} username={userInfo.login} description={userInfo.bio}/>}
+          {Object.keys(this.props.userInfo).length !== 0 && <UserCard
+            avatar={userInfo.avatar_url}
+            username={userInfo.login}
+            description={userInfo.bio}
+            getUserRepos={this.props.getUserRepos}
+          />}
       </div>
     );
   }
 }
 
-const mapStateToProps = state => ({
-  userInfo: state.reducer.userInfo
-})
+Search.propTypes = {
+  userInfo: PropTypes.object,
+  userRepos: PropTypes.array,
+  getUserInfo: PropTypes.func,
+  getuserRepos: PropTypes.func
+}
+
+const mapStateToProps = state => {
+  return {
+    userInfo: state.user
+  }
+}
 
 const mapDispatchToProps = dispatch => ({
-  getUserInfo: bindActionCreators(getUserInfo, dispatch)
+  getUserInfo: bindActionCreators(getUserInfo, dispatch),
+  getUserRepos: bindActionCreators(getuserRepos, dispatch)
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search);
