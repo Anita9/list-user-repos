@@ -22,6 +22,7 @@ class ReposList extends Component {
             <img src={back} alt="Back button"/>
           </button>
         </Link>
+        {this.props.userRepos.length === 0 && <div className="no-repos">This user doesn't have any repositories.</div>}
         <div  className="repos-list-wrapper">
           {this.props.userRepos.length > 0 && this.props.userRepos.map(repo =>
             <div className="repos-list-element">
