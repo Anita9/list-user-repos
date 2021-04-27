@@ -11,7 +11,10 @@ export const getUserInfo = (username) => async (dispatch) => {
     })
   })
   .catch(error => {
-    console.error(error);
+    dispatch({
+      type: constants.GET_USER_INFO,
+      payload: error.response.status
+    })
   })
 }
 
@@ -30,6 +33,9 @@ export const getuserRepos = (username) => async (dispatch) => {
     })
   })
   .catch(error => {
-    console.error(error);
+    dispatch({
+      type: constants.GET_USER_REPOS,
+      payload: error.response.status
+    })
   })
 }

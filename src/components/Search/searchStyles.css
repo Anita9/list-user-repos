@@ -45,3 +45,16 @@
 .search-icon{
   fill: #373640;
 }
+
+.user-error{
+  all: unset;
+  color: #e44d6a;
+  margin: 0 20% 0 40%;
+  display: flex;
+}
+
+.user-error > img{
+  width: 17px;
+  height: 17px;
+  margin: 1px 5px 0 0;
+}

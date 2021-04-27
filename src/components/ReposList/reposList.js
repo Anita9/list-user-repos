@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 import { getuserRepos } from '../../state/actions';
 import { Link } from 'react-router-dom';
 import back from '../../back.svg';
+import alert from '../../alert.svg';
 import RepoCard from '../RepoCard/repoCard';
 import './reposListStyles.css';
 
@@ -22,7 +23,7 @@ class ReposList extends Component {
           </button>
         </Link>
         <div  className="repos-list-wrapper">
-          {this.props.userRepos.map(repo =>
+          {this.props.userRepos.length > 0 && this.props.userRepos.map(repo =>
             <div className="repos-list-element">
               <RepoCard
                 name={repo.name}
@@ -36,6 +37,12 @@ class ReposList extends Component {
               />
             </div> 
           )}
+          {typeof this.props.userRepos === "number" &&
+            <div className="repos-error">
+              <img src={alert} alt="alert"/>
+              We couldn't load user's repos. Please go back and try again.
+            </div>
+          }
         </div>
       </div>
     );

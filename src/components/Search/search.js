@@ -1,6 +1,7 @@
 import { Component } from "react";
 import './searchStyles.css';
-import search from '../../search.svg'
+import search from '../../search.svg';
+import alert from '../../alert.svg';
 import UserCard from '../UserCard/userCard';
 
 import PropTypes from 'prop-types';
@@ -40,6 +41,7 @@ class Search extends Component {
     const { userInfo } = this.props;
     return (
       <div>
+        
         <form role="search" className="search-wrapper" autoComplete="off">
           <input autoComplete="false" name="hidden" type="text" style={{display: "none"}}/>
           <input
@@ -59,6 +61,12 @@ class Search extends Component {
             username={userInfo.login}
             description={userInfo.bio}
           />}
+          {typeof this.props.userInfo === "number" &&
+          <div className="user-error">
+            <img src={alert} alt="alert"/>
+            We couldn't load user's data. Please try again.
+          </div>
+        }
       </div>
     );
   }
