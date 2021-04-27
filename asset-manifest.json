@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/list-user-repos/static/css/main.006253d1.chunk.css",
+    "main.js": "/list-user-repos/static/js/main.a28ef397.chunk.js",
+    "main.js.map": "/list-user-repos/static/js/main.a28ef397.chunk.js.map",
+    "runtime-main.js": "/list-user-repos/static/js/runtime-main.e6a0bbb5.js",
+    "runtime-main.js.map": "/list-user-repos/static/js/runtime-main.e6a0bbb5.js.map",
+    "static/js/2.94884b6a.chunk.js": "/list-user-repos/static/js/2.94884b6a.chunk.js",
+    "static/js/2.94884b6a.chunk.js.map": "/list-user-repos/static/js/2.94884b6a.chunk.js.map",
+    "index.html": "/list-user-repos/index.html",
+    "static/css/main.006253d1.chunk.css.map": "/list-user-repos/static/css/main.006253d1.chunk.css.map",
+    "static/js/2.94884b6a.chunk.js.LICENSE.txt": "/list-user-repos/static/js/2.94884b6a.chunk.js.LICENSE.txt",
+    "static/media/alert.162cee4a.svg": "/list-user-repos/static/media/alert.162cee4a.svg",
+    "static/media/back.3cc76821.svg": "/list-user-repos/static/media/back.3cc76821.svg",
+    "static/media/search.8e55e40c.svg": "/list-user-repos/static/media/search.8e55e40c.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e6a0bbb5.js",
+    "static/js/2.94884b6a.chunk.js",
+    "static/css/main.006253d1.chunk.css",
+    "static/js/main.a28ef397.chunk.js"
+  ]
+}
