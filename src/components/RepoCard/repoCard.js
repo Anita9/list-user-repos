@@ -2,6 +2,7 @@ import React from 'react';
 import { Component } from 'react';
 import './repoCardStyles.css';
 import TextTruncate from 'react-text-truncate';
+import PropTypes from 'prop-types';
 
 class RepoCard extends Component {
 
@@ -31,6 +32,17 @@ class RepoCard extends Component {
       </button>
     )
   }
+}
+
+RepoCard.propTypes = {
+  url: PropTypes.string,
+  name: PropTypes.string,
+  description: PropTypes.string,
+  createdDate: PropTypes.string,
+  stargazers: PropTypes.number,
+  watchers: PropTypes.number,
+  forks: PropTypes.number,
+  licence: PropTypes.string
 }
 
 export default RepoCard;

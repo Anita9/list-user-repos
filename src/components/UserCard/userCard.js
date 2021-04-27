@@ -3,6 +3,7 @@ import { Component } from 'react';
 import { Link } from 'react-router-dom'
 import './userCardStyles.css';
 import TextTruncate from 'react-text-truncate';
+import PropTypes from 'prop-types';
 
 
 class UserCard extends Component {
@@ -27,6 +28,12 @@ class UserCard extends Component {
       </Link>
     );
   }
+}
+
+UserCard.propTypes = {
+  avatar: PropTypes.string,
+  username: PropTypes.string,
+  description: PropTypes.string
 }
 
 export default UserCard;
