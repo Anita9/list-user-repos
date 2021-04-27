@@ -1,20 +1,32 @@
 import React from 'react';
 import { Component } from 'react';
 import './repoCardStyles.css';
+import TextTruncate from 'react-text-truncate';
 
 class RepoCard extends Component {
+
+  getDate = (date) => {
+    return new Date(date).toDateString();
+  }
 
   render() {
     return (
       <button className="repo-wrapper">
-        <h3 className="repo-name">Repository name</h3>
-        <div className="repo-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullam</div>
-        <div className="repo-created-date">{new Date().toDateString()}</div>
+        <h3 className="repo-name">{this.props.name}</h3>
+        <div className="repo-description">
+          <TextTruncate
+            line={3}
+            element="div"
+            truncateText="..."
+            text={this.props.description}
+          />
+        </div>
+        <div className="repo-created-date">Created: {this.getDate(this.props.createdDate)}</div>
         <div className="repo-info-wrapper">
-          <div className="stargazers">Stargazers: 5</div>
-          <div className="watchers">Watchers: 25</div>
-          <div className="forks">Forks: 15</div>
-          <div className="repo-licence">Licence: MIT</div>
+          <div className="stargazers">Stargazers: {this.props.stargazers}</div>
+          <div className="watchers">Watchers: {this.props.watchers}</div>
+          <div className="forks">Forks: {this.props.forks}</div>
+          <div className="repo-licence">Licence: {this.props.licence ? this.props.licence : "None"}</div>
         </div>
       </button>
     )

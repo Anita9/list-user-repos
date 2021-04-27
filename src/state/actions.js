@@ -15,6 +15,12 @@ export const getUserInfo = (username) => async (dispatch) => {
   })
 }
 
+export const resetState = () => (dispatch) => {
+  dispatch({
+    type: constants.RESET_STATE
+  })
+}
+
 export const getuserRepos = (username) => async (dispatch) => {
   await axios.get(`https://api.github.com/users/${username}/repos`)
   .then(response => {

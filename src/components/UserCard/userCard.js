@@ -6,16 +6,10 @@ import './userCardStyles.css';
 
 class UserCard extends Component {
 
-  getRepos = (e) => {
-    e.preventDefault();
-
-    this.props.getUserRepos(this.props.username);
-  }
-
   render() {
     return (
       <Link to="/repos">
-        <button className="wrapper" onClick={() => this.getRepos}>
+        <button className="wrapper">
           <img src={this.props.avatar} alt="avatar" className="user-avatar"/>
           <div className="user-info">
             <h5 className="user-name">{this.props.username}</h5>

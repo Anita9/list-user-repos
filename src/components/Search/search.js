@@ -6,7 +6,7 @@ import UserCard from '../UserCard/userCard';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { getUserInfo, getuserRepos } from '../../state/actions';
+import { getUserInfo, resetState } from '../../state/actions';
 
 class Search extends Component {
 
@@ -16,6 +16,10 @@ class Search extends Component {
     this.state = {
       username: ''
     }
+  }
+
+  componentDidMount(){
+    this.props.resetState();
   }
 
   onChange = e => {
@@ -33,7 +37,6 @@ class Search extends Component {
 
   render() {
 
-    console.log(this.props);
     const { userInfo } = this.props;
     return (
       <div>
@@ -55,7 +58,6 @@ class Search extends Component {
             avatar={userInfo.avatar_url}
             username={userInfo.login}
             description={userInfo.bio}
-            getUserRepos={this.props.getUserRepos}
           />}
       </div>
     );
@@ -64,9 +66,7 @@ class Search extends Component {
 
 Search.propTypes = {
   userInfo: PropTypes.object,
-  userRepos: PropTypes.array,
-  getUserInfo: PropTypes.func,
-  getuserRepos: PropTypes.func
+  getUserInfo: PropTypes.func
 }
 
 const mapStateToProps = state => {
@@ -77,7 +77,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
   getUserInfo: bindActionCreators(getUserInfo, dispatch),
-  getUserRepos: bindActionCreators(getuserRepos, dispatch)
+  resetState: bindActionCreators(resetState, dispatch)
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search);
