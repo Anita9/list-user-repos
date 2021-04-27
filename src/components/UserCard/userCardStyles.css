@@ -1,4 +1,4 @@
-.wrapper {
+.user-wrapper {
   all: unset;
   height: 85px;
   width: 295px;
@@ -6,7 +6,7 @@
   border-radius: 5px;
   margin: 0 40% 20px; 
   display: grid;
-  grid-template-columns: 40% 60%;
+  grid-template-columns: 30% 70%;
   grid-template-rows: 100%;
   background-color: #ffffff;
 }
@@ -41,11 +41,10 @@
 }
 
 .user-description{
-  width: 120px;
-  height: 40px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
   margin: 10px 5px;
   font-size: 12px;
+}
+
+.user-link {
+  text-decoration: none;
 }
