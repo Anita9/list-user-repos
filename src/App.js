@@ -4,10 +4,11 @@ import {
   Switch,
   Route
 } from 'react-router-dom'
-import './App.css';
 
 import Search from './components/Search/search';
 import ReposList from './components/ReposList/reposList';
+
+import './App.css';
 
 class App extends Component {
 

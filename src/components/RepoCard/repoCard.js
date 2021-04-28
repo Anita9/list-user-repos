@@ -1,7 +1,6 @@
-import React from 'react';
 import { Component } from 'react';
-import './repoCardStyles.css';
 import PropTypes from 'prop-types';
+import './repoCardStyles.css';
 
 class RepoCard extends Component {
 
@@ -10,20 +9,21 @@ class RepoCard extends Component {
   }
 
   render() {
+    const { url, name, description, createdDate, stargazers, watchers, forks, licence } = this.props;
     return (
-      <button className="repo-wrapper" onClick={() => window.open(this.props.url, '_blank').focus()}>
-        <h3 className="repo-name">{this.props.name}</h3>
+      <button className="repo-wrapper" onClick={() => window.open(url, '_blank').focus()}>
+        <h3 className="repo-name">{name}</h3>
         <div className="repo-description">
           <div className="repo-description-clamp">
-            {this.props.description}
+            {description ? description : "This repository doesn't have a description."}
           </div>
         </div>
-        <div className="repo-created-date">Created: {this.getDate(this.props.createdDate)}</div>
+        <div className="repo-created-date">Created: {this.getDate(createdDate)}</div>
         <div className="repo-info-wrapper">
-          <div className="repo-element-col-1">Stargazers: {this.props.stargazers}</div>
-          <div className="repo-element-col-2">Watchers: {this.props.watchers}</div>
-          <div className="repo-element-col-1">Forks: {this.props.forks}</div>
-          <div className="repo-element-col-2">Licence: {this.props.licence ? this.props.licence : "None"}</div>
+          <div className="repo-element-col-1">Stargazers: {stargazers}</div>
+          <div className="repo-element-col-2">Watchers: {watchers}</div>
+          <div className="repo-element-col-1">Forks: {forks}</div>
+          <div className="repo-element-col-2">Licence: {licence ? licence : "None"}</div>
         </div>
       </button>
     )

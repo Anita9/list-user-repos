@@ -1,12 +1,17 @@
 import { Component } from "react";
 import PropTypes from 'prop-types';
+
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { getuserRepos } from '../../state/actions';
+
 import { Link } from 'react-router-dom';
+
+import RepoCard from '../RepoCard/repoCard';
+
 import back from '../../back.svg';
 import alert from '../../alert.svg';
-import RepoCard from '../RepoCard/repoCard';
+
 import './reposListStyles.css';
 
 class ReposList extends Component {
@@ -14,6 +19,7 @@ class ReposList extends Component {
   componentDidMount(){
     this.props.getuserRepos(this.props.userInfo.login);
   }
+  
   render() {
     const { userRepos } = this.props;
     return (
@@ -68,4 +74,5 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => ({
   getuserRepos: bindActionCreators(getuserRepos, dispatch)
 })
+
 export default connect(mapStateToProps, mapDispatchToProps)(ReposList);

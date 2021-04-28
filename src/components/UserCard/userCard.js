@@ -1,12 +1,11 @@
-import React from 'react';
 import { Component } from 'react';
-import { Link } from 'react-router-dom'
-import './userCardStyles.css';
 import PropTypes from 'prop-types';
 
+import { Link } from 'react-router-dom'
+
+import './userCardStyles.css';
 
 class UserCard extends Component {
-
   render() {
     return (
       <Link to="/repos" className="user-link">
