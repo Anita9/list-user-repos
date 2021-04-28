@@ -4,16 +4,16 @@
   flex-direction: column;
   height: 200px;
   width: 350px;
-  border: 2px solid #7e97a6;
   border-radius: 5px;
   margin: auto;
-  background-color: #ffffff4f;
+  background-color: #fdfffc;
   color: #373640;
+  box-shadow: inset 0 0 7px #7e97a6;
 }
 
 .repo-wrapper:hover {
   cursor: pointer;
-  background-color: #c2c2bf81;
+  background-color: #7e97a69f;
 }
 
 .repo-wrapper:focus {
@@ -26,11 +26,19 @@
 
 .repo-description {
   margin-left: 5px;
-  height: 60px;
+  height: 65px;
+  width: 335px;
+  overflow: hidden;
+}
+
+.repo-description-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 .repo-created-date {
-  margin-top: 15px;
+  margin-top: 10px;
   margin-left: 5px;
 }
 
@@ -40,24 +48,13 @@
   margin-top: 15px;
 }
 
-.stargazers {
+.repo-element-col-1 {
   grid-column-start: 1;
   margin-left: 5px;
   place-self: end start;
 }
 
-.watchers {
-  grid-column-start: 2;
-  place-self: end start;
-}
-
-.forks {
-  grid-column-start: 1;
-  margin-left: 5px;
-  place-self: end start;
-
-}
-.repo-licence {
+.repo-element-col-2 {
   grid-column-start: 2;
   place-self: end start;
 }

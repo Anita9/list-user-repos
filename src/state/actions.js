@@ -27,15 +27,24 @@ export const resetState = () => (dispatch) => {
 export const getuserRepos = (username) => async (dispatch) => {
   await axios.get(`https://api.github.com/users/${username}/repos`)
   .then(response => {
-    dispatch({
-      type: constants.GET_USER_REPOS,
-      payload: response.data
-    })
+    if(response.data.length === 0) {
+      console.log('entered if')
+      dispatch({
+        type: constants.GET_USER_REPOS,
+        payload: null
+      })
+    }
+    else {
+      dispatch({
+        type: constants.GET_USER_REPOS,
+        payload: response.data
+      })
+    }
   })
   .catch(error => {
     dispatch({
       type: constants.GET_USER_REPOS,
-      payload: error.response.status
+      payload: error && error.response.status
     })
   })
 }

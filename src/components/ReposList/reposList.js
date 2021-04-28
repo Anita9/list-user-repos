@@ -15,6 +15,7 @@ class ReposList extends Component {
     this.props.getuserRepos(this.props.userInfo.login);
   }
   render() {
+    const { userRepos } = this.props;
     return (
       <div>
         <Link to="/list-user-repos">
@@ -22,9 +23,10 @@ class ReposList extends Component {
             <img src={back} alt="Back button"/>
           </button>
         </Link>
-        {this.props.userRepos.length === 0 && <div className="no-repos">This user doesn't have any repositories.</div>}
+        {!userRepos && <div className="no-repos">This user doesn't have any repositories.</div>}
+        {userRepos && userRepos.length === 0 && <div className="loading-repos">Loading...</div>}
         <div  className="repos-list-wrapper">
-          {this.props.userRepos.length > 0 && this.props.userRepos.map(repo =>
+          {userRepos && userRepos.length > 0 && userRepos.map(repo =>
             <div className="repos-list-element">
               <RepoCard
                 name={repo.name}
@@ -38,7 +40,7 @@ class ReposList extends Component {
               />
             </div> 
           )}
-          {typeof this.props.userRepos === "number" &&
+          {typeof userRepos === "number" &&
             <div className="repos-error">
               <img src={alert} alt="alert"/>
               We couldn't load user's repos. Please go back and try again.

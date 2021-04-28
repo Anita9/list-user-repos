@@ -2,7 +2,6 @@ import React from 'react';
 import { Component } from 'react';
 import { Link } from 'react-router-dom'
 import './userCardStyles.css';
-import TextTruncate from 'react-text-truncate';
 import PropTypes from 'prop-types';
 
 
@@ -16,12 +15,9 @@ class UserCard extends Component {
           <div className="user-info">
             <h4 className="user-name">{this.props.username}</h4>
             <div className="user-description">
-              <TextTruncate
-                  line={2}
-                  element="div"
-                  truncateText="..."
-                  text={this.props.description}
-                />
+                <div className="user-description-clamp">
+                  {this.props.description}
+                </div>
             </div>
           </div>
         </button>

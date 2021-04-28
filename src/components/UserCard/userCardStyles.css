@@ -1,19 +1,19 @@
 .user-wrapper {
   all: unset;
   height: 85px;
-  width: 295px;
-  border: 2px solid #7e97a6;
+  width: 300px;
   border-radius: 5px;
   margin: 0 40% 20px; 
   display: grid;
   grid-template-columns: 30% 70%;
   grid-template-rows: 100%;
-  background-color: #ffffff4f;
+  background-color: #fdfffc;
+  box-shadow: inset 0 0 7px #7e97a6;
 }
 
 .user-wrapper:hover {
   cursor: pointer;
-  background-color: #c2c2bf81;
+  background-color: #7e97a69f;
 }
 
 .user-wrapper:focus {
@@ -42,7 +42,15 @@
 
 .user-description{
   margin: 10px 5px;
-  font-size: 12px;
+  font-size: 13px;
+  width: 200px;
+  overflow: hidden;
+}
+
+.user-description-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 .user-link {
